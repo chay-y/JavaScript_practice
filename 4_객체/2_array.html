@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = ["참외", "오렌지", "수박", "포도"]
+        let arr2 = ["장미", "안개꽃", "백합"]
+
+        let result;
+
+        //join: : 배열의 요소들을 구분자를 이용하여 나타냄
+        result = arr1.join("/")
+        document.write(result+"<br><br>")
+        
+        //concat : 배열2개를 하나의 배열로 합쳐서 나타냄
+        result = arr1.concat(arr2);
+        document.write(result+"<br><br>")
+
+        //slice : 배열에서 특정 부분만 추출
+        result = arr1.slice(1,3); //1 이상 3 미만
+        document.write(result+"<br><br>")
+
+        //sort : 원본 오름차순 정렬
+        result = arr1.sort(); 
+        document.write(result+"<br><br>")
+        document.write(arr1+"<br><br>")
+
+        //reverse : 순서를 역순으로 변경
+        result = arr1.reverse(); 
+        document.write(result+"<br><br>")
+        document.write(arr1+"<br><br>")
+
+        //arr2를 내림차순으로 정렬 출력
+        result = arr2.reverse(); 
+        document.write(result+"<br><br>")
+        document.write(arr2+"<br><br>")
+    </script>
+</body>
+</html>

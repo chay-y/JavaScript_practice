@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="hello">안뇽</button>
+
+    <div id="box">
+        <h1 class="text">점심시간!</h1>
+    </div>
+
+    <script>
+        //안녕 버튼을 클릭하면 알림창으로 hello!!를 출력
+        // let btn = document.getElementById("hello");
+
+        // btn.addEventListener("click", function(){
+        //     alert("hello!!");
+        // })
+
+        $("#hello").on("click", function(){
+            alert("hi!");
+        })
+        $("#box").css("backgroundColor", "orange");
+        $("#box:first-child").css("opacity", "0.5");
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let t = "hello Thank you good luck to you";
+
+        // 해당 위치의 글자 반환
+        document.write(t.charAt(16), "<br>")
+        // 해당 글자를 찾아 글자를 반환, 없으면 null 반환
+        document.write(t.match("luck"), "<br>")
+
+        //왼쪽에서부터 해당 글자를 찾아 위치를 반환
+        document.write(t.indexOf("you"), "<br>")
+        document.write(t.indexOf("you", 16), "<br>")
+
+        //오른쪽에서부터 해당 글자를 찾아 위치를 반환
+        document.write(t.lastIndexOf("you"), "<br>")
+        document.write(t.lastIndexOf("you", 16), "<br>")
+
+        //왼쪽에서부터 해당 글자를 찾아 위치를 반환
+        document.write(t.search("you"), "<br>")
+
+        // *index와 search의 차이점 : search는 시작 위치 지정이 불가능하다.
+        // search는 정규표현식 가능. index는 불가능
+        // 정규표현식 : 문자열을 검색할 때 여러 조건을 지정하여 빠르고 정확한 검색이 가능하도록 함
+
+        //21번 인덱스부터 4글자를 가져와서 출력
+        document.write(t.substr(21,4),"<br>")
+
+        //6번 인덱스부터 12번 인덱스 직전까지를 가져와서 출력
+        document.write(t.substring(6,12),"<br>")
+
+        //왼쪽에서부터 가장 먼저 발견된 you를 me로 변경
+        document.write(t.replace("you","me"),"<br>")
+
+        //영문자를 모두 소문자로
+        document.write(t.toLowerCase(),"<br>")
+        //영문자를 모두 대문자로
+        document.write(t.toUpperCase(),"<br>")
+
+        //문자열의 총 개수
+        document.write(t.length,"<br>")
+
+        //지정한 문자를 기준으로 분리한 후 배열에 저장
+        let s = t.split(" ");
+        document.write(s[0],"<br>")
+        document.write(s[1],"<br>")
+        document.write(s[2],"<br>")
+        document.write(s[3],"<br>")
+        document.write(s[4],"<br><br>")
+
+        for(i=0; i<s.length; i++){
+            document.write(s[i],"<br>")
+        }
+    </script>
+</body>
+</html>

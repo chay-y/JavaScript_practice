@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            철수의 하루 적정 지출 비용은 1만원이다.
+            교통비, 식비, 커피값을 입력받아 하루 지출 비용을 계산하되
+            지출이 초과된 경우에는
+            '000원 초과' 라고 출력하고
+            초과하지 않은 경우 잔액을 출력하시오
+        */
+
+        /*
+            화면에 입력받은 순자는 문자로 처리
+            입력받은 문자를 숫자로 변환하는 방법
+             1. *1붙여주기
+             2. Number() 함수 이용
+             3. parseInt() 함수 이용
+        */
+
+        let traffic = prompt("교통비를 입력하세요");
+        let food = prompt("식비를 입력하세요");
+        let coffee = prompt("커피값을 입력하세요");
+
+        let dally_fee = Number(traffic)+Number(food)+Number(coffee);
+        let result = dally_fee>10000 ? (dally_fee*1-10000)+"원 초과" :"잔액 "+(10000-dally_fee*1)+"원 남았습니다."
+
+        document.write(result);
+    </script>
+</body>
+</html>

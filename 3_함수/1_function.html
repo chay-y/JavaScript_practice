@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+
+        //함수의 호이스팅
+        //함수 선언부의 위치와 상관 없이
+        //자바스크립트 코드 해석시, 함수 선언부를 가장 먼저 해석하므로
+        //함수의 선언 위치가 코드 실행에 영향을 주지 않음
+
+        //함수 호출
+        myFnc();
+
+
+        //함수 정의
+        function myFnc(){
+            count++;
+            document.write("hello"+count+"<br>")
+        }
+        
+        // 익명함수
+        // 익명함수는 호이스팅 사용이 불가능함
+        let theFnc = function(){
+            count++;
+            document.write("bye"+count+"<br>")
+        }
+        
+        theFnc();
+
+    </script>
+</body>
+</html>

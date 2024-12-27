@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 1000;
+
+        if(a >= 1000){
+            document.write("1000 이상의 값")
+        } else {
+            document.write("1000 미만의 값")
+        }
+        document.write("<br>"+"끝.")
+    </script>
+
+    <hr>
+
+    <script>
+        let num = 4;
+
+        if(num%2==0){
+            document.write("짝수")
+        } else {
+            document.write("홀수")
+        }
+    </script>
+
+    <hr>
+
+    <script>
+        // let result = confirm("주문을 진행하시겟습니까?")
+
+        // 숫자0, null, undefined, ""은 false,
+        // 나머지 모든값들은 true
+        
+        if(result == true) {
+            document.write("주문 완료!")
+        } else {
+            document.write("주문 취소!")
+        }
+
+    </script>
+
+    <hr>
+
+    <script>
+        let n=50;
+
+        if(n>=100){
+            document.write("100 이상");
+        } else if (n>=50){
+            document.write("50 이상")
+        } else{
+            document.write("0 이상")
+        }
+    </script>
+
+    <hr>
+
+    <script>
+        /*
+            가격이 2000원 이상이면 '10%할인'
+            1000원 이상이면 '5%할인'
+            나머지는 '할인안함' 출력
+        */
+        //let dis = 1500;
+
+        if(dis>=2000){
+            document.write("10%할인")
+        } else if (dis>=1000){
+            document.write("5%할인")
+        } else{
+            document.write("할인안함")
+        }
+    </script>
+
+    <hr>
+
+    <script>
+        // 현재 월을 입력받아 계절을 표시하시오
+        // 3-5 봄, 6-8 여름, 9-11 가을, 12-2 겨울
+
+        //let month = prompt("현재 월을 입력하세요");
+
+        if (month >= 3 && month <= 5){
+            document.write("봄")
+        }else if(month >= 6 && month <= 8){
+            document.write("여름")
+        }else if(month >= 9 && month <= 11){
+            document.write("가을")
+        }else{
+            document.write("겨울")
+        }
+    </script>
+
+    <hr>
+
+    <script>
+        //let score = prompt("점수를 입력하세요")
+        if (score >= 90){rate="A"}
+        else if(score >= 80){rate="B"}
+        else if(score >= 70){rate="C"}
+        else if(score >= 60){rate="D"}
+        else{rate="F"}
+        // document.write("입력하신 "+score+"점은 "+rate+"등급입니다.")
+        document.write(`입력하신 ${score}점은 ${rate}등급입니다.`)
+    </script>
+
+    <script>
+        // let score = prompt("점수를 입력하세요")
+        // if (score >= 90){document.write("입력하신 "+score+"점은 A등급입니다.")}
+        // else if(score >= 80 && score < 90){document.write("입력하신 "+score+"점은 B등급입니다.")}
+        // else if(score >= 70 && score < 80){document.write("입력하신 "+score+"점은 C등급입니다.")}
+        // else if(score >= 60 && score < 70){document.write("입력하신 "+score+"점은 D등급입니다.")}
+        // else{document.write("입력하신 "+score+"점은 F등급입니다.")}
+    </script>
+    
+    <hr>
+
+    <script>
+        //let nmb = prompt("숫자를 입력하세요")
+        if(nmb%10==0){what="10의배수"}
+        else if(nmb%2==0){what="짝수"}
+        else{what="홀수"}
+        document.write(what)
+    </script>
+
+    <hr>
+
+    <script>
+        let id="green";
+        let pw="1234";
+        //let loginId = prompt("아이디를 입력하세요")
+        //let loginPw = prompt("비밀번호를 입력하세요")
+        if(loginId == id && loginPw == pw){document.write(`${id}님 반갑습니다!`)}
+        else if(loginId != id){alert("아이디가 일치하지 않습니다!"); location.reload();}
+        else{alert("비밀번호가 일치하지 않습니다!"); location.reload();}
+    </script>
+
+    <hr>
+
+    <script>
+        //let testNum = 1;
+        //switch(testNum){
+        //    case 1: document.write("11111 <br>"); break;
+        //    case 2: document.write("22222 <br>"); break;
+        //    case 3: document.write("33333 <br>"); break;
+        //}
+    </script>
+
+    <hr>
+
+    <script>
+        //let hobby = prompt("취미를 선택하세요 1:축구 2:농구 3:야구 4:배구 etc:배드민턴")
+        //switch(Number(hobby)){
+        //    case 1:document.write("축구"); break;
+        //    case 2:document.write("농구"); break;
+        //    case 3:document.write("야구"); break;
+        //    case 4:document.write("배구"); break;
+        //    default:document.write("배드민턴"); break;
+        //}
+    </script>
+
+    <hr>
+
+    <script>
+        let site = prompt("즐겨찾는 포털 검색 사이트는? (네이버/다음/네이트/구글 중 선택)")
+        let url = "";
+        switch(site){
+            case "네이버":url = "www.naver.com"; break;
+            case "다음":url = "www.daum.net"; break;
+            case "네이트":url = "www.nate.com"; break;
+            case "구글":url = "www.google.com"; break;
+            default: alert("보기에 없는 사이트입니다.");  location.reload();
+        }
+        if(url){location.href="https://"+url;}
+        
+    </script>
+
+</body>
+</html>

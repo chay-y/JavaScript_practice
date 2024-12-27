@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function Book (bookName, auther, publisher, publicationDate, page, price){
+            this.bookName = bookName;
+            this.auther = auther;
+            this.publisher = publisher;
+            this.publicationDate = publicationDate;
+            this.page = page;
+            this.price = price;
+        }
+
+        let aBook = new Book("행운을 빕니다", "김이환", "들녘", "2020-11-07", 376, 14000);
+        let bBook = new Book("유랑의 달", "이유리", "은행나무", "2020-10-12", 372, 15000);
+        let cBook = new Book("인생은 소설이다", "기욤뮈소", "밝은세상", "2020-11-24", 312, 14000);
+
+        let bookList=[aBook, bBook, cBook];
+
+        for(let i=0; i<bookList.length; i++){
+            document.write(bookList[i].auther+",")
+            document.write(bookList[i].bookName+"<br>")
+        }
+
+    </script>
+</body>
+</html>

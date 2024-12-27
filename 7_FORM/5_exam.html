@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{width: 400px; margin: 0 auto;}
+        fieldset{margin-bottom: 15px; border: 1px solid #ccc;}
+        #total{border: none; font-size: 16px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>피자 주문</h1>
+        <form name="pizza">
+            <fieldset>
+                <legend>사이즈</legend>
+                <select name="size" id="size">
+                    <option value="choose">사이즈를 선택하세요</option>
+                    <option value="Large">Large - 24000원</option>
+                    <option value="Medium">Medium - 20000원</option>
+                    <option value="small">Small - 17000원</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>추가주문</legend>
+                <label><input type="checkbox" name="pickle" class="checkbox" value="800">피클(800원)</label>
+                <label><input type="checkbox" name="chilly" class="checkbox" value="500">칠리 소스(500원)</label>
+                <label><input type="checkbox" name="deeping" class="checkbox" value="400">디핑 소스(400원)</label>
+                <label><input type="checkbox" name="stick" class="checkbox" value="4800">치즈스틱(4개, 4800원)</label>
+                <label><input type="checkbox" name="salad" class="checkbox" value="2400">콘 샐러드(2400원)</label>
+            </fieldset>
+            <fieldset>
+                <legend>합계</legend>
+                <input type="text" id="total" name="total" class="price" readonly>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        // let Large = 24000
+        // let Medium = 20000
+        // let small = 17000
+        // let sizeMenu = document.pizza.size;
+        // let plusMenu = document.pizza.checkbox;
+
+        // function totalMenu(){
+        //     let total = sizeMenu.options[sizeMenu.selectedIndex.value]+plusMenu.options[plusMenu.selectedIndex.value]
+        //     document.querySelector("price").innerHTML=("총"+total+"원 입니다.")    
+        // }
+
+        //변수 선언
+        let selectMenu = document.querySelector("#size");
+        // let sideMenu = document.querySelectorAll(".checkbox");
+        let sideMenu = document.querySelectorAll("input[type='checkbox']");
+        let total = document.querySelector("#total");
+        let price = 0;
+
+        //select메뉴가 변경(change)되면 -> addEventLinstener
+        selectMenu.addEventListener("change", function(){
+            let selectText = selectMenu.options.selectedIndex;
+            switch(selectText){
+                case 0 :
+                    price=0;
+                case 1 :
+                    price=24000;
+                    break;   
+                case 2 :
+                    price=20000;
+                    break;  
+                case 3 :
+                    price=17000;
+                    break;  
+            }
+            total.value = price+"원";
+
+            for(let i=0; i<sideMenu.length; i++){
+            sideMenu[i].checked = false;
+            }
+        })
+            //선택한 메뉴에 따라서
+            //가격 설정(index 이용)
+
+        //결정한 가격을 합계에 출력(input에 나타나는 값->value속성)
+        
+
+        //체크상자에 체크를 하면(반복문 이용)
+        for (let i=0; i<sideMenu.length; i++){
+            sideMenu[i].addEventListener("change", function(){
+                if(this.checked){
+                    price += this.value
+                }else{
+                    price -= this.value
+                }
+                total.value=price+"원"
+            })
+        }
+            //하나하나의 체크박스에 이벤트를 지정 (change 이벤트)
+            //만약에 체크가 되면 가격에 선택한 대상의 금액을 더하고
+            //체크를 해제하면 가격에서 선택한 대상의 금액을 빼기
+
+            //결과를 합계자리에 출력
+    </script>
+</body>
+</html>

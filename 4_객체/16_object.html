@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function human(name, height, weight){
+            this.name = name;
+            this.height = height;
+            this.weight = weight;
+            this.minWeight;
+            this.maxWeight;
+        }
+
+        this.getInfo=function() {
+            let str = "이름 :" + this.name + ", " + "키 : "+this.height+"몸무게 :"+this.weight;
+        }
+
+        this.getResult=function(){
+            this.minWeight = (this.height-100)*0.9-5;
+            this.maxWeight = (this.height-100)*0.9+5;
+
+            if (this.weight>=this.minWeight && this.weight<=this.minWeight){
+                return "정상 몸무게입니다."
+            }else if(this.weight<this.minWeight){
+                return "몸무게 미달입니다."
+            }else{return "몸무게 초과입니다."}
+        }
+
+        let per1 = new human("장그린", 163, 88);
+        let per2 = new human("이자바", 180, 65);
+
+        document.write(per1.getInfo())
+        document.write(per1.getResult())
+        document.write(per2.getInfo())
+        document.write(per2.getResult())
+        
+    </script>
+</body>
+</html>

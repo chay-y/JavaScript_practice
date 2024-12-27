@@ -1,0 +1,73 @@
+//사용자의 패 결정
+let userInput = prompt("가위, 바위, 보!!!!")
+
+const SCISSORS = "가위";
+const ROCK = "바위";
+const PAPER = "보";
+
+//만약 사용자가 가위, 바위, 보를 제외한 다른 내용을 입력했다면
+//알림창 표시
+if (userInput != SCISSORS && userInput != ROCK && userInput != PAPER) {
+    alert("가위, 바위, 보 중에 하나를 입력하세요!")
+} else {
+
+    //33%의 확률에 따라, 가위, 바위, 보를 결정
+
+    let rnd = Math.random();
+    let comInput;
+
+    if (rnd < 0.33) {    //0~0.33사이의 값
+        comInput = SCISSORS
+    } else if (rnd <0.66){  //0.34~0.66사이의 값
+        comInput = ROCK
+    } else {
+        comInput = PAPER
+    }
+
+
+    //승패 결정
+    // 사용자가 '가위'인 경우 컴퓨터가 가위/바위/보 에 다른 결과 출력
+
+    switch (userInput) {
+        case SCISSORS: //사용자->가위
+
+            switch(comInput) {
+                case SCISSORS:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 비겼습니다.`)
+                    break;
+                case ROCK:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 졌습니다.`)
+                    break;
+                default:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 이겼습니다.`)
+                    break;
+            }
+
+        case ROCK :
+            switch (comInput) {
+                case SCISSORS:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 이겼습니다.`)
+                    break;
+                case ROCK:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 비겼습니다.`)
+                    break;
+                default:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 졌습니다.`)
+                    break;
+            }
+
+        default:
+
+            switch(comInput){
+                case SCISSORS :
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 졌습니다.`)
+                    break;
+                case ROCK :
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 이겼습니다.`)
+                    break;
+                default:
+                    alert(`컴퓨터 : ${comInput} , 사용자 : ${userInput} -> 비겼습니다.`)
+                    break;
+            }
+    }
+}

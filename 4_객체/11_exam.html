@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- // 1. 사용자의 영문 이름과 전화번호를 입력받아 화면에 출력
+    // 영어이름은 모두 대문자로 표시하고
+    // 전화번호는 마지막 4자리는 ****로 표시 -->
+
+    <script>
+        let userName = prompt("영문 이름을 입력하세요")
+        let phoneNumber = prompt("전화번호를 입력하세요")
+        document.write("영문이름 : "+userName.toUpperCase(),"<br>")
+        let result = phoneNumber.substr(0, phoneNumber.length-4)+"****";
+        document.write("전화번호 : "+result);
+    </script>
+</body>
+</html>

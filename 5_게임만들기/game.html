@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농구게임</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="scoreBoard">
+            <div class="shotsLeft">
+                <span>남은 슛 횟수</span>
+                <span id="shotsCount">15</span>
+            </div>
+            <div class="score">
+                <div class="scoreName">컴퓨터</div>
+                <div id="computerScore">0</div>
+            </div>
+            <div class="score">
+                <div class="scoreName">사용자</div>
+                <div id="userScore">0</div>
+            </div>
+            <div id="text">컴퓨터부터 시작합니다.</div>
+        </div>
+        <div class="controlPanel">
+            <div class="panel" id="computer">
+                <div class="controlName">컴퓨터</div>
+                <button class="btncomputer" id="btncomputer" onclick="onComputerShoot()">shoot!</button>
+            </div>
+            <div class="panel" id="user">
+                <div class="controlName">사용자</div>
+                <button class="btnUser" onclick="onUserShoot(2)" disabled>2point</button>
+                <button class="btnUser" onclick="onUserShoot(3)" disabled>3point</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/game2.js"></script>
+</body>
+</html>

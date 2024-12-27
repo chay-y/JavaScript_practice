@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td{
+            border-collapse: collapse;
+            border: 1px solid #ccc;}
+    </style>
+</head>
+<body>
+
+    <script>
+        // 총 5개의 숫자를 입력받고
+        // 입력한 숫자와 그 숫자들의 합계를
+        // 표의 형태로 출력
+
+    let numbers = [];
+    let sum = 0;
+    
+    for (i=0; i<5; i++){
+
+        numbers[i]=parseInt(prompt((i+1)+"번째 숫자 입력"))
+        sum += numbers[i];
+        
+    }
+
+    numbers.push(sum);
+    showArray(numbers)
+
+    function showArray(arr){
+
+        let str="<table><tr>";
+        for(let i=0; i<numbers.length; i++){str+="<td>"+arr[i]+"</td>"}
+        str += "</tr></table>"
+
+        document.write(str)
+    }
+    
+
+
+    </script>
+    
+</body>
+</html>

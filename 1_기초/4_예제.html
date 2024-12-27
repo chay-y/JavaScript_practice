@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 적정체중 계산기
+        **계산방법 : (키-100) * 0.9
+        사용자에게 이름, 키, 몸무게를 입력받아
+        적정체중을 계산하고
+        적정체중이 현재 몸무게의 +-5kg 이내라면
+        "000님은 정상 체중입니다." 표시
+        아니면 "000님은 적정 체중이 아닙니다."화면에 출력 */   
+    
+        let name = prompt("이름을 입력하세요");
+        let height = prompt("키를 입력하세요");
+        let weight = prompt("몸무게를 입력하세요")
+
+        let normal_w = (height -100) * 0.9
+
+        let result = weight >= normal_w-5 && weight <= normal_w+5 ?name+"님은 적정체중입니다." :name+"님은 적정 체중이 아닙니다."
+
+        document.write(result);
+    </script>
+</body>
+</html>

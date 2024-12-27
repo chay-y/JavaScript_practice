@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        사용자에게 이메일 주소를 입력받고
+        이메을 주소가 맞는지 확인하시오
+        조건1> .co.kr, .com, .net, .or.kr, .go.kr로 끝나야 함
+        조건2> @가 포함되어야 함
+    -->
+
+    <script>
+        let userEmail = prompt("이메일 주소를 입력하세요")
+        let mailaddress = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"]
+        let check1 = false;
+        let check2 = false;
+
+        for(let i=0; i<mailaddress.length; i++){
+            if(userEmail.indexOf(mailaddress[i])>0){
+                check1 = true
+            }
+        }
+// mailaddress가 true값인지 확인
+
+        if (userEmail.indexOf("@")>0){
+            check2 = true;
+        }
+// @가 true값인지 확인
+
+// 두개가 다 가지고 있을 경우 이메일 주소가 맞다고 반환, 하나라도 만족이 안되면 else반환
+        if(check1 && check2){
+            document.write("이메일 주소가 맞습니다.")
+        }else{
+            document.write("이메일 형식이 아닙니다.")
+        }
+    </script>
+</body>
+</html>

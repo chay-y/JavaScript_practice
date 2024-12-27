@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: "Dongle", sans-serif;}
+        ul{list-style: none;}
+        ul li{font-size: 25px;}
+        input[type="text"]{
+            border: none;
+            border-bottom: 2px solid #ccc;
+            width: 200px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form name="order">
+            <fieldset>
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <label for="orderName">이름 :</label>
+                        <input type="text" id="orderName">
+                    </li>
+                    <li>
+                        <label for="orderTel">연락처 :</label>
+                        <input type="text" id="orderTel">
+                    </li>
+                    <li>
+                        <label for="orderAddr">주소 :</label>
+                        <input type="text" id="orderAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <form name="ship">
+            <fieldset>
+                <legend>배송 정보</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="shippingInfo">
+                        <label for="shippingInfo">주문 정보와 배송 정보가 같습니다.</label>
+                    </li>
+                    <li>
+                        <label for="shippingName">이름 :</label>
+                        <input type="text" id="shippingName">
+                    </li>
+                    <li>
+                        <label for="shippingTel">연락처 :</label>
+                        <input type="text" id="shippingTel">
+                    </li>
+                    <li>
+                        <label for="shippingAddr">주소 :</label>
+                        <input type="text" id="shippingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <button>주문하기</button>
+    </div>
+    <script>
+        // 체크박스가 true 라면 주문정보에 있는 내용을 배송 정보와 같게 옮겨줌
+        // 체크박스가 false 라면 주문정보에 있는 내용을 배송 정보에 옮기지 않음
+        let check = document.querySelectorAll("#shippingInfo");
+
+        check.addEventListener("click", function(){
+            if (check.checked == true){
+                document.querySelector("#shippingName").value=document.querySelector("#orderName").value;
+                document.querySelector("#shippingTel").value=document.querySelector("#orderTel").value;
+                document.querySelector("#shippingAddr").value=document.querySelector("#orderAddr").value;
+            } else {
+                document.querySelector("#shippingName").value="";
+                document.querySelector("#shippingTel").value="";
+                document.querySelector("#shippingAddr").value="";
+            }
+        })
+
+        
+        
+    </script>
+</body>
+</html>

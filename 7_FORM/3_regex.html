@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = 
+            `
+            010-1234-1234
+            가나다라
+            ugo04@gmai.com
+            https://www.omdbapi.com/?apikey=f1ab98ec&s=parasite
+            The quick brown fox jumps over the lazy dog.
+            abbcccddddd
+            `   
+            //정규식 확인
+
+            //결과에 만족하는지 확인 : 정규식.text(내용)
+            //결과값 확인하기 : 내용.match(정규식)
+
+            const regexp1 = /h..p/g;
+            document.write("regex1 : " + regexp1.test(str)+ "<br>")
+            document.write("regex1 : " + str.match(regexp1)+ "<br>")
+            document.write("<br>")
+            
+
+            const regexp2 = /fox|dog/g;
+            document.write("regex2 : " + regexp2.test(str)+ "<br>")
+            document.write("regex2 : " + str.match(regexp2)+ "<br>")
+            document.write("<br>")
+            
+            const regexp3 = /https?/;
+            document.write("regex3 : " + regexp3.test(str)+ "<br>")
+            document.write("regex3 : " + str.match(regexp3)+ "<br>")
+            document.write("<br>")
+
+            const regexp4 = /d{2,}/;
+            document.write("regex4 : " + regexp4.test(str)+ "<br>")
+            document.write("regex4 : " + str.match(regexp4)+ "<br>")
+            document.write("<br>")
+
+            // const regexp2 = /fox|dog/g;
+            // document.write("regex1 : " + regexp1.test(str)+ "<br>");
+            // document.write("regex1 : " + str.match(regexp2)+ "<br>");
+            // document.write("<br>");
+            
+            const regexp6 = /[the]/g;
+            document.write("regex6 : " + regexp6.test(str)+ "<br>");
+            document.write("regex6 : " + str.match(regexp6)+ "<br>");
+            document.write("<br>");
+
+            const regexp7 = /[가-힣]{1,}/g;
+            document.write("regex7 : " + regexp7.test(str)+ "<br>");
+            document.write("regex7 : " + str.match(regexp7)+ "<br>");
+            document.write("<br>");
+            
+            
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="theBody">
+
+    <button onclick="changeColor()">배경색바꾸기</button>
+
+    <script>
+        //1. 배열에 원하는 색상 이름을 저장하고
+        //버튼을 클릭하면 해당 색상이 배경에 적용되도록 지정
+        let color = ["gray", "lightgreen", "pink", "lightblue"]
+        let i = 0;
+        function changeColor(){
+            document.querySelector(".theBody").style.backgroundColor=color[i]
+            i++;
+            if (i>3){i = 0;}
+        }
+    </script>
+</body>
+</html>

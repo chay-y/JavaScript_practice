@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 생성 방법1
+        let tv = new Object();
+
+        tv.color = "white"
+        tv.price = 1200000;
+        tv.info = function(){
+            document.write("tv 색상 : " + tv.color + "<br>");
+            document.write("tv 가격 : " + tv.price + "<br>");
+        }
+
+        tv.info();
+
+        //객체 생성 방법2
+        let car = {
+            color: "black",
+            price: 50000000,
+            info : function(){
+                document.write("car 색상 : " + tv.color + "<br>");
+                document.write("car 가격 : " + tv.price + "<br>");
+            }
+        }
+
+        car.info();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cover{
+            border: 10px solid transparent;
+        }
+        .item{
+            position: relative;
+        }
+        .over{
+            position: absolute;
+            left: 20px;
+            bottom: 30px;
+        }
+        #text{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <img src="../img/trans_1.png" alt="" id="cover">
+        <button class="over" id="open">상세 설명 보기</button>
+
+        <div id="text">
+            <h3>보드타는 라이언</h3>
+            <p>슈웅</p>
+            <button id="close">상세 설명 닫기</button>
+        </div>
+    </div>
+
+    <script>
+        let coverImg = document.querySelector("#cover");
+
+        coverImg.onmouseover= function(){
+            coverImg.style.border="10px solid black"
+        }
+        coverImg.onmouseout= function(){
+            coverImg.style.border=""
+        }
+
+        document.querySelector("#open").onclick = show;
+        document.querySelector("#close").onclick = hide;
+       
+        function show(){
+            document.querySelector("#text").style.display = "block";
+            document.querySelector("#open").style.display = "none";
+        }
+        
+        function hide(){
+            document.querySelector("#text").style.display = "none";
+            document.querySelector("#open").style.display = "block";
+        }
+    </script>
+</body>
+</html>
